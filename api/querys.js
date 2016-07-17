@@ -43,6 +43,22 @@ module.exports = {
 			?
 		)
 	`,
+	"userPublish": `
+		SELECT
+			publishs.id_publish,
+			title,
+			media,
+			media_type,
+			location,
+			description,
+			date_time,
+			username
+		FROM publishs 
+		  INNER JOIN users
+			ON publishs.id_user = users.id_user
+		WHERE username = ? 
+		ORDER BY id_publish;
+	`,
 	"publish": `
 		SELECT
 			publishs.id_publish,
@@ -52,14 +68,10 @@ module.exports = {
 			location,
 			description,
 			date_time,
-			username,
-			liked
+			username
 		FROM publishs 
 		  INNER JOIN users
 			ON publishs.id_user = users.id_user
-		  LEFT JOIN likes
-		  	ON publishs.id_publish = likes.id_publish
-		WHERE username = ? 
 		ORDER BY id_publish;
 	`,
 	"media": `

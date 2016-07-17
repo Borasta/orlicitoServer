@@ -10,7 +10,7 @@ module.exports = function(db) {
             ]);
 
             if(params)
-                db.query(querys.publish, params)
+                db.query(querys.userPublish, params)
                     .then(function(row){
                         res
                             .status(200)
@@ -23,9 +23,18 @@ module.exports = function(db) {
                         .send("No se pudieron encontrar sus publicaciones");
                 });
             else {
-                res
-                    .status(400)
-                    .send("Faltan parametros");
+                db.query(querys.publish, params)
+                    .then(function(row){
+                        res
+                            .status(200)
+                            .send(row);
+                    }).catch(function(error){
+                    //logs out the error
+                    console.log(error);
+                    res
+                        .status(400)
+                        .send("No se pudieron encontrar sus publicaciones");
+                });
             }
         },
         "post": function (req, res) {

@@ -10,9 +10,12 @@ module.exports = function(db, io) {
                 req.body.id_publish
             ]);
 
+            console.log("hola, si entre")
+
             if( params )
                 db.query(querys.findLike, params)
                     .then(function(row){
+                        console.log(row)
                         if( row.length ) {
                             res
                                 .status(200)
