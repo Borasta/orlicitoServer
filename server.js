@@ -11,7 +11,7 @@ var dbOptions = require("./api/db");
 var router = express.Router();
 var app = express();
 
-app.set("port", 5000);
+app.set("port", process.env.PORT || 5000);
 
 app.use(bodyParser.urlencoded({extended: false}));
 
