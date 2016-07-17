@@ -24,7 +24,7 @@ var http = app.listen(app.get("port"), function () {
 	console.log(`Server iniciado en http://localhost:${app.get("port")}/`);
 });
 
-mysql.createConnection(dbOptions.local)
+mysql.createConnection(dbOptions.externa)
 	.then(function(conn){
 		console.log("Conexion con la base de datos correcta");
 		var io = socket(http);
