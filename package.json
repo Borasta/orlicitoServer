@@ -1,0 +1,25 @@
+{
+  "name": "myserver",
+  "version": "1.0.0",
+  "description": "Orlicito Network is a red social based in instagram",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "nodemon server.js"
+  },
+  "author": "Orlando Bohorquez",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "fs.extra": "^1.3.2",
+    "jwt-simple": "^0.5.0",
+    "method-override": "^2.3.6",
+    "mkdirp": "^0.5.1",
+    "moment": "^2.13.0",
+    "multer": "^1.1.0",
+    "promise-mysql": "^1.3.2",
+    "socket.io": "^1.4.8",
+    "uniqid": "^3.0.0"
+  }
+}
