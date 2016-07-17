@@ -42,11 +42,11 @@ module.exports = function( router, db, io ) {
 	// .delete(media.delete);
 
 	router.route("/like")
-	// .get(like.get)
-	.get(authMiddleware, function (req, res) {
+		.get(authMiddleware, like.get)
+	/*.get(authMiddleware, function (req, res) {
 		io.emit(req.user.username, "Hola cara de bola");
 		res.send(null);
-	})
+	})*/
 		.post(authMiddleware, like.post);
 	// .put(like.put)
 	// .delete(like.delete);
