@@ -7,15 +7,15 @@ module.exports = function(db, io) {
         "get": function (req, res) {
             var params = validated([
                 req.user.id,
-                req.body.id_publish
+                req.query.id_publish
             ]);
 
-            console.log("hola, si entre")
+            console.log("hola, si entre");
 
             if( params )
                 db.query(querys.findLike, params)
                     .then(function(row){
-                        console.log(row)
+                        console.log(row);
                         if( row.length ) {
                             res
                                 .status(200)
