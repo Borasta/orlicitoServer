@@ -15,6 +15,8 @@ module.exports = function(db) {
         },
         "post": function (req, res) {
 
+            console.log(req.body);
+
             console.log(req.file);
 
             var serverPath = __dirname + "/../../";

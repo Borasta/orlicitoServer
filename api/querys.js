@@ -57,7 +57,7 @@ module.exports = {
 		  INNER JOIN users
 			ON publishs.id_user = users.id_user
 		WHERE username = ? 
-		ORDER BY id_publish;
+		ORDER BY id_publish DESC;
 	`,
 	"publish": `
 		SELECT
@@ -72,7 +72,7 @@ module.exports = {
 		FROM publishs 
 		  INNER JOIN users
 			ON publishs.id_user = users.id_user
-		ORDER BY id_publish;
+		ORDER BY id_publish DESC;
 	`,
 	"media": `
 		SELECT  
@@ -86,7 +86,7 @@ module.exports = {
 	`,
 	"findLike": `
 		SELECT 
-			liked
+			*
 		FROM likes 
 		WHERE 
 			id_user = ?

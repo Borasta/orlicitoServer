@@ -10,17 +10,13 @@ module.exports = function(db, io) {
                 req.query.id_publish
             ]);
 
-            console.log("hola, si entre");
-
             if( params )
                 db.query(querys.findLike, params)
                     .then(function(row){
-                        console.log(row);
-                        if( row.length ) {
+                        if( row.length )
                             res
                                 .status(200)
                                 .send(row[0].liked.toString());
-                        }
                         else {
                             res
                                 .status(200)
